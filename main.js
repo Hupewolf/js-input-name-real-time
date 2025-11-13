@@ -1,18 +1,21 @@
 let name = prompt("Hãy nhập tên của bạn");
-let now = new Date();
-let hour = now.getHours();
-
-
-let message;
-
-if (hour < 12) {
-    message = `Good morning, ${name}`;
-} 
-else if (hour < 18) {
-    message = `Good afternoon, ${name}`;
-} 
+if (!name) {
+    document.body.innerHTML = `<h1>Quên nhập tên kìa</h1>`;
+}
 else {
-    message = `Good evening, ${name}`;
-}    
-document.body.innerHTML = `<h1>${message}</h1>`;
+    let time = new Date();
+    let hour = time.getHours();
 
+    let a;
+
+    if (hour < 12) {
+        a = `Good morning, ${name}!`;
+    } 
+    else if (hour < 18) {
+        a = `Good afternoon, ${name}`;
+    } 
+    else {
+        a = `Good evening, ${name}!`;
+    }    
+    document.body.innerHTML = `<h1>${a}</h1>`;
+}
