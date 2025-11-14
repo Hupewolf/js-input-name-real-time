@@ -1,8 +1,11 @@
-let name = prompt("Hãy nhập tên của bạn");
-if (!name) {
-    document.body.innerHTML = `<h1>Quên nhập tên kìa</h1>`;
+let name; 
+do {
+    name = prompt("Hãy nhập tên của bạn");
+    if (!name) {
+        name = prompt("Quên nhập tên kìa, nhập lại đi!");
+    }
 }
-else {
+while (!name)
     let time = new Date();
     let hour = time.getHours();
 
@@ -18,4 +21,4 @@ else {
         a = `Good evening, ${name}!`;
     }    
     document.body.innerHTML = `<h1>${a}</h1>`;
-}
+
